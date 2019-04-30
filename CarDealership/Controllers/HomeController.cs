@@ -1,5 +1,5 @@
-
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using CarDealership.Models;
 
 namespace CarDealership.Controllers
@@ -7,24 +7,32 @@ namespace CarDealership.Controllers
   public class HomeController : Controller
   {
 
-    [Route("/")]
+    [HttpGet("/")]
     public ActionResult Index()
     {
-      Cars starterCar = new Cars("Add first car to the car inventory");
-      return View(starterCar);
+      List<Cars> allCars = Cars.GetAll();
+      return View(allCars);
     }
+
     [Route("/cars/new")]
     public ActionResult CreateForm()
     {
       return View();
     }
 
-    [Route("/cars")]
-    public ActionResult Create(string makeModel, string color, int mileage, int price)
-    {
-      Cars myCar = new Cars(makeModel, color, mileage, price);
-      return View("Index", myCar);
-    }
-  }
+    // [HttpPost("/cars")]
+    // public ActionResult Create(string makeModel, string color, int mileage, int price)
+    // {
+    //   Cars myCar = new Cars(makeModel, color, mileage, price);
+    //   return RedirectToAction("Index");
+    // }
 
+    [HttpPost("/cars")]
+    public ActionResult Create(string makeModel)
+    {
+      Cars myCar = new Cars(makeModel);
+      return RedirectToAction("Index");
+    }
+
+  }
 }
