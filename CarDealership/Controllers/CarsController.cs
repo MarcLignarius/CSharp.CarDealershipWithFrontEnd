@@ -15,18 +15,25 @@ namespace CarDealership.Controllers
       return View(allCars);
     }
 
+    [HttpPost("/cars")]
+    public ActionResult Create(string makeModel, string color, int mileage, int price)
+    {
+      Cars myCar = new Cars(makeModel, color, mileage, price);
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost("/cars/delete")]
+    public ActionResult DeleteAll()
+    {
+      Cars.ClearAll();
+      return View();
+    }
+
     [Route("/cars/new")]
     public ActionResult CreateForm()
     {
       return View();
     }
 
-    [HttpPost("/cars")]
-    public ActionResult Create(string makeModel, string color, int mileage, int price)
-    {
-      Cars myCar = new Cars(makeModel, color, mileage, price);
-      return RedirectToAction("Index");
-
-    }
   }
 }

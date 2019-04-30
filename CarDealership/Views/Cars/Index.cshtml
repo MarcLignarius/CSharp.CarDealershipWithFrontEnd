@@ -12,7 +12,6 @@
     <div class="jumbotron">
       <h1>Car Shop Inventory</h1>
     </div>
-    <ul>
 
     @if (Model.Count == 0)
     {
@@ -22,12 +21,26 @@
     {
       @foreach (Cars car in Model)
       {
-        <li>@car.makeModel, @car.color, @car.mileage, @car.price</li>;
+
+        <div class="card col-md-4" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">@car.makeModel</h5>
+            <ul class="card-text">
+              <li>Color: @car.color</li>
+              <li>Mileage: @car.mileage</li>
+              <li>Price: @car.price</li>
+            </ul>
+          </div>
+        </div>
       }
     }
 
-    </ul>
-    <a href='/cars/new' class="btn btn-dark">Add a New Car</a>
+    <a href='/cars/new' class="btn btn-dark">Add another car</a>
+
+    <form action="/cars/delete" method="post">
+      <button type="submit" class="btn btn-dark" name="button">Clear All Cars</button>
+    </form>
+
   </div>
 </body>
 </html>
