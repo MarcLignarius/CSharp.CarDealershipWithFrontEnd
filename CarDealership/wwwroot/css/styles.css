@@ -1,0 +1,17 @@
+body {
+  background-image: url("http://www.hdcarwallpapers.com/walls/2017_pagani_zonda_fantasma_evo_2-HD.jpg");
+  background-blend-mode: multiply;
+  background-color: #3D3A39;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+
+.jumbotron h1{
+  opacity: 0.80;
+}
+
+.jumbotron {
+  background: rgba(61, 58, 57, 0.75);
+}
