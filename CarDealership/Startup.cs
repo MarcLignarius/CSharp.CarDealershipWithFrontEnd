@@ -31,7 +31,7 @@ namespace CarDealership
           name: "default",
           template: "{controller=Home}/{action=Index}/{id?}");
       });
-
+        app.UseDeveloperExceptionPage();
         app.Run(async (context) =>
         {
           await context.Response.WriteAsync("Something went wrong!");

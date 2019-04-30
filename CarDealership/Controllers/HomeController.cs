@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using CarDealership.Models;
-
+using System;
 namespace CarDealership.Controllers
 {
   public class HomeController : Controller
@@ -20,19 +20,12 @@ namespace CarDealership.Controllers
       return View();
     }
 
-    // [HttpPost("/cars")]
-    // public ActionResult Create(string makeModel, string color, int mileage, int price)
-    // {
-    //   Cars myCar = new Cars(makeModel, color, mileage, price);
-    //   return RedirectToAction("Index");
-    // }
-
     [HttpPost("/cars")]
-    public ActionResult Create(string makeModel)
+    public ActionResult Create(string makeModel, string color, int mileage, int price)
     {
-      Cars myCar = new Cars(makeModel);
+      Cars myCar = new Cars(makeModel, color, mileage, price);
       return RedirectToAction("Index");
-    }
 
+    }
   }
 }
