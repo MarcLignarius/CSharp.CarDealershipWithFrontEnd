@@ -11,9 +11,10 @@ _Program which lets users add cars to an inventory and view the inventory._
 ## Setup/Installation Requirements
 
 * _Clone from GitHub_
-* _$cd MVCCarDealership/CarDealership_
-* _$dotnet run_
-* _In your browser, launch [http://localhost:5000](http://localhost:5000)_
+* _$cd CarDealership.Solution/CarDealerShip_
+* _$dotnet restore to install packages from the .csproj file_
+* _$dotnet run to start the application_
+* _Launch [http://localhost:5000/](http://localhost:5000/) in your browser_
 
 ## Specs
 
