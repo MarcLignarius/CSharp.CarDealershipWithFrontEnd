@@ -21,26 +21,24 @@
     {
       @foreach (Cars car in Model)
       {
-
-        <div class="card col-md-4" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">@car.makeModel</h5>
-            <ul class="card-text">
-              <li>Color: @car.color</li>
-              <li>Mileage: @car.mileage</li>
-              <li>Price: @car.price</li>
-            </ul>
+        <div class="list">
+          <div class="card col-md-12">
+            <div class="card-body">
+              <h5 class="card-title">@car.makeModel</h5>
+              <ul class="card-text">
+                <li>Color: @car.color</li>
+                <li>Mileage: @car.mileage</li>
+                <li>Price: @car.price</li>
+              </ul>
+            </div>
           </div>
         </div>
       }
     }
-
-    <a href='/cars/new' class="btn btn-dark">Add another car</a>
-
-    <form action="/cars/delete" method="post">
-      <button type="submit" class="btn btn-dark" name="button">Clear All Cars</button>
-    </form>
-
+    <div class="list">
+      <a href='/cars/new' class="btn btn-dark">Add a new car</a>
+      <a href='/' class="btn btn-dark">Back to Homepage</a>
+    </div>
   </div>
 </body>
 </html>

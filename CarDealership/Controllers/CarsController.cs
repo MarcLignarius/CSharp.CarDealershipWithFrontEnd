@@ -22,13 +22,6 @@ namespace CarDealership.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpPost("/cars/delete")]
-    public ActionResult DeleteAll()
-    {
-      Cars.ClearAll();
-      return View();
-    }
-
     [Route("/cars/new")]
     public ActionResult CreateForm()
     {
